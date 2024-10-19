@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import './TestTaskPage.css'
 import { useNavigate } from 'react-router-dom';
 
-import { Button, EnglishAlphabetRegexString, Input, Page, GetTestTaskResponseBody, SendGuessRequestBody, useAuth, Alert, SendGuessResponseBody, GetTestTaskFinishedResponseBody } from '../../Library'
+import {
+    Button, EnglishAlphabetRegexString, Input, Page, GetTestTaskResponseBody,
+    SendGuessRequestBody, useAuth, Alert, SendGuessResponseBody, GetTestTaskFinishedResponseBody,
+    QualificationService
+} from '../../Library'
 import ReactMarkdown from 'react-markdown';
 
 import text from "../../Library/Assets/Text/main.json";
 import { PageText } from './types';
-import QualificationService from '../../Library/Services/QualificationService';
 
 function TestTaskPage() {
     const pageText: PageText = text.testTask;
