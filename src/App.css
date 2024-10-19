@@ -1,0 +1,84 @@
+.app {
+  /* variables are used so main content can be moved down when topbar is fixed on mobile */
+  --topbar_wrapper-padding: 1em;
+  --topbar_height: 1.8em;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    --topbar_wrapper-padding: 1em;
+  }
+}
+
+.app--content {
+  flex: 1;
+}
+
+.topbar__wrapper {
+  width: 100%;
+  background-color: rgb(var(--background-color));
+  z-index: 100;
+  padding: var(--topbar_wrapper-padding) 0;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  height: var(--topbar_height);
+}
+
+.topbar > div > a {
+  height: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar > a {
+    height: 100%;
+  }
+}
+
+.topbar img {
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--secondary-color);
+}
+
+.footer > div:nth-child(odd) {
+  padding: 1.5rem 0;
+}
+
+.divider {
+  width: 90%;
+  max-width: 1200px;
+  height: 1px;
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .divider {
+    width: 100%;
+  }
+}

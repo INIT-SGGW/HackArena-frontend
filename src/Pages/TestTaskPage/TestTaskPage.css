@@ -1,0 +1,50 @@
+.testtask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testtask__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.testtask__markdown * {
+  font-size: 0.9rem;
+  color: var(--text-one-color);
+}
+
+.testtask__markdown p {
+  margin-bottom: 3ch;
+}
+
+.testtask__markdown li {
+  margin-bottom: 1ch;
+  line-height: 1.3em;
+}
+
+.testtask__answer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.testtask-anwser__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.testtask-anwser__header span {
+  font-size: 0.8rem;
+  text-wrap: nowrap;
+  color: rgb(var(--primary-color));
+}

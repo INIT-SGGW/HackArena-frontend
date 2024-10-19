@@ -1,0 +1,9 @@
+{
+  "short_name": "HackArena",
+  "name": "HackArena - Organizacja Hackathonów",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffd200",
+  "background_color": "#000314"
+}

@@ -1,0 +1,38 @@
+.register {
+  --input-padding: 0.5rem;
+  --input-border-width: 3px;
+}
+
+.register--heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.register--heading > .social {
+  margin-top: 2rem;
+}
+
+.register--heading > .header__yellow {
+  /* margin-bottom: 1.2rem; */
+}
+
+.register--content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.register__emails {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.register__email--margin-bottom {
+  margin-bottom: 1rem;
+}
