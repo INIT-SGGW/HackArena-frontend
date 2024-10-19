@@ -1,0 +1,3 @@
+[submodule "src/Library"]
+	path = src/Library
+	url = https://github.com/INIT-SGGW/HackArena2024H2-Frontend-Library.git
