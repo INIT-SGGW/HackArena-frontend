@@ -113,7 +113,7 @@ const router = createBrowserRouter([
       {
         path: "/konto",
         element:
-          <ProtectedRoute>ments
+          <ProtectedRoute>
             <AccountPage />
           </ProtectedRoute>,
       },

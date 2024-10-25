@@ -16,6 +16,8 @@ import {
   testTaskEndDate,
   DateFormat,
   FileUploader,
+  getEventStatus,
+  EventStatus,
 } from "../../Library";
 
 import text from "../../Library/Assets/Text/main.json";
@@ -250,8 +252,13 @@ function AccountPage() {
           />
         )}
         <h2 className="header header__yellow">{teamData?.teamName}</h2>
-        <FileUploader sendFile={handleSendFile} fileTypes={["zip"]} />
-        <Button className="btn btn__primary" onClick={() => navigate("/konto/dokumenty")} border width="100%" >Dokumenty</Button>
+        {
+          getEventStatus() === EventStatus.EventLive &&
+          <>
+            <FileUploader sendFile={handleSendFile} fileTypes={["zip"]} />
+            <Button className="btn btn__primary" onClick={() => navigate("/konto/dokumenty")} border width="100%" >Dokumenty</Button>
+          </>
+        }
         {showVerificationInfo && (
           <div className="account__verification-info">
             <span>
@@ -263,46 +270,7 @@ function AccountPage() {
             </span>
           </div>
         )}
-        {showTask && (
-          <div className="account__task">
-            <h5>Dziękujemy za zapisanie się na HackArena 2.0!</h5>
-            <span>
-              Aby w uczciwy sposób wybrać drużyny, które wezmą udział w
-              wydarzeniu, wprowadziliśmy zadanie kwalifikacyjne.
-              <br />
-              <br />
-              Zadanie polega na rozwiązaniu zadania programistycznego i nie
-              powinno Wam zająć więcej niż 2 godziny.
-              <br />
-              <br />
-              Rozwiązujecie jako drużyna, więc macie w sumie 3 próby na
-              przesłanie poprawnej odpowiedzi.
-              <br />
-              <br />W pierwszej kolejnosci oceniana bedzie poprawność odesłanego
-              rozwiązania, następnie czas po jakim to rozwiązanie przesłaliście.
-              Pierwsze 16 drużyn, które najszybciej odesłały poprawne
-              odpowiedzi, dostaną się na drugą edycję HackArena!
-              <br />
-              <br />
-              <b>
-                Czas zaczyna być mierzony od momentu kliknięcia przycisku
-                poniżej.
-              </b>
-              <br />
-              <br />
-              Zadanie będzie dostępne do rozwiązania do{" "}
-              {dateFormat(testTaskEndDate, DateFormat.FULL)}.
-            </span>
-            <Button
-              className="btn btn__primary"
-              border={true}
-              width="100%"
-              onClick={() => navigate("/zadanie")}
-            >
-              Zadanie
-            </Button>
-          </div>
-        )}
+
         <ul className="account__table">
           {teamData?.teamMembers.map((member, index) => (
             <li key={index}>
