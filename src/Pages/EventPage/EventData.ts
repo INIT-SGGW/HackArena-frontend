@@ -127,7 +127,7 @@ export const AllEventsData: { [key: string]: any } = {
         generalInformation: {
             title: "Informator",
             description:
-                "W wydarzeniu weźmie udział <b>16 zespołów</b>, każdy składający się z <b>2 lub 3 osób.</b> Wydarzenie będzie trwało przez <b>dwa dni</b> na SGGW w Warszawie w budynku numer 34 <b>(ul. Nowoursynowska 159).</b> W ciągu dnia zostaną udostępnione sale oraz będzie zapewnione jedzenie, ale <b>nie organizujemy noclegu dla uczestników.</b>",
+                "W wydarzeniu weźmie udział <b>16 zespołów</b>, każdy składający się z <b>2 lub 3 osób.</b> Wydarzenie będzie trwało przez <b>dwa dni</b> na SGGW w Warszawie na Auli Kryształowej <b>(ul. Nowoursynowska 166).</b> W ciągu dnia zostaną udostępnione sale oraz będzie zapewnione jedzenie, ale <b>nie organizujemy noclegu dla uczestników.</b>",
         },
         task: {
             title: "Zadanie",

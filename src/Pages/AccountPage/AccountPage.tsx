@@ -15,6 +15,7 @@ import {
   dateFormat,
   testTaskEndDate,
   DateFormat,
+  FileUploader,
 } from "../../Library";
 
 import text from "../../Library/Assets/Text/main.json";
@@ -213,6 +214,25 @@ function AccountPage() {
       });
   };
 
+  const handleSendFile = (file: File): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      TeamService.uploadSolution(teamName, file).then((response) => {
+        if (response.status === 201) {
+          resolve();
+        } else {
+          response
+            .json()
+            .then((data) => {
+              reject(new Error(data.error));
+            })
+            .catch(() => {
+              reject(new Error("Błąd serwera"));
+            });
+        }
+      });
+    });
+  }
+
   return (
     <Page
       pageTitle={pageText.meta.title}
@@ -230,22 +250,8 @@ function AccountPage() {
           />
         )}
         <h2 className="header header__yellow">{teamData?.teamName}</h2>
-        {/* <div className={`account__header${updateTeamActive ? " account__header--active" : ""}`}>
-          <input
-            disabled={!updateTeamActive}
-            style={{
-              width: `${teamNameHeader?.length ? teamNameHeader.length + 0.1 : 1}ch`
-            }}
-            onKeyDown={(e) => { if (e.key === "Enter") handleTeamUpdate() }}
-            onInput={(e) => setTeamNameHeader(e.currentTarget.value)}
-            value={teamNameHeader} />
-          <div>
-            <img
-              src={updateTeamActive ? CheckIcon : EditIcon}
-              alt={updateTeamActive ? "check" : "edit"}
-              onClick={handleTeamUpdate} />
-          </div>
-        </div> */}
+        <FileUploader sendFile={handleSendFile} fileTypes={["zip"]} />
+        <Button className="btn btn__primary" onClick={() => navigate("/konto/dokumenty")} border width="100%" >Dokumenty</Button>
         {showVerificationInfo && (
           <div className="account__verification-info">
             <span>
@@ -310,11 +316,10 @@ function AccountPage() {
               <img
                 src={member.verified ? VerifiedIcon : UnverifiedIcon}
                 alt={member.verified ? "verified" : "unverified"}
-                title={`${
-                  member.verified
-                    ? "Członek zespołu zweryfikowany"
-                    : "W celu weryfikacji konta, wejdź w link przesłany na maila. Zespół nie zostanie zapisany turniej do momentu weryfikacji wszystkich członków zespołu."
-                }`}
+                title={`${member.verified
+                  ? "Członek zespołu zweryfikowany"
+                  : "W celu weryfikacji konta, wejdź w link przesłany na maila. Zespół nie zostanie zapisany turniej do momentu weryfikacji wszystkich członków zespołu."
+                  }`}
               />
             </li>
           ))}

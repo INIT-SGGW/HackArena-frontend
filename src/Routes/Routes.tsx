@@ -15,6 +15,7 @@ import ChangePasswordPage from "../Pages/ChangePasswordPage/ChangePasswordPage";
 import Contact from "../Pages/Contact/Contact";
 import ProtectedRoute from "../Library/Routes/ProtectedRoute";
 import TestTaskPage from "../Pages/TestTaskPage/TestTaskPage";
+import Documents from "../Pages/Documents/Documents";
 
 const router = createBrowserRouter([
   {
@@ -112,9 +113,15 @@ const router = createBrowserRouter([
       {
         path: "/konto",
         element:
-          <ProtectedRoute>
+          <ProtectedRoute>ments
             <AccountPage />
           </ProtectedRoute>,
+      },
+      {
+        path: "/konto/dokumenty",
+        element: <ProtectedRoute>
+          <Documents />
+        </ProtectedRoute>
       },
       {
         path: "/wydarzenia",
@@ -124,24 +131,24 @@ const router = createBrowserRouter([
         path: "/wydarzenia/:eventName",
         element: <EventPage />,
       },
-      {
-        path: "/zadanie",
-        element:
-          <ProtectedRoute>
-            <TestTaskPage />
-          </ProtectedRoute>
-      },
-      {
-        path: "/zadanie/poprawne",
-        element: <MessagePage
-          title="Gratulacje!"
-          message="Poprawnie rozwiązałeś zadanie. Wkrótce otrzymasz maila z informacją czy udało Ci się zakwalifikować."
-          buttonOneText="Konto"
-          buttonOneLink="/konto"
-          buttonTwoText="Strona główna"
-          buttonTwoLink="/"
-        />
-      },
+      // {
+      //   path: "/zadanie",
+      //   element:
+      //     <ProtectedRoute>
+      //       <TestTaskPage />
+      //     </ProtectedRoute>
+      // },
+      // {
+      //   path: "/zadanie/poprawne",
+      //   element: <MessagePage
+      //     title="Gratulacje!"
+      //     message="Poprawnie rozwiązałeś zadanie. Wkrótce otrzymasz maila z informacją czy udało Ci się zakwalifikować."
+      //     buttonOneText="Konto"
+      //     buttonOneLink="/konto"
+      //     buttonTwoText="Strona główna"
+      //     buttonTwoLink="/"
+      //   />
+      // },
       {
         path: "/zadanie/niepoprawne",
         element: <MessagePage

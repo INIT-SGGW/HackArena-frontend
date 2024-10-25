@@ -85,7 +85,6 @@ function TestTaskPage() {
                     setAlertMessage({ message: error.message, description: "Błąd pobierania danych z serwera" });
                 })
             } else if (response.status === 204) {
-                console.log("204");
                 navigate("/zadanie/poprawne");
             } else {
                 response.json().then((data) => {

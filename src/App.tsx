@@ -9,6 +9,7 @@ import { AuthProvider, NavBar, SocialMedia, useWindowWidth, NavItems } from "./L
 import Logo from "./Assets/logo.svg"
 import SGGW from "./Assets/sggw_logo_white.png";
 import text from "./Library/Assets/Text/main.json";
+import Statues from "./Library/Components/Statues/Statues";
 
 const TopBar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -34,11 +35,40 @@ const TopBar = () => {
 const Footer = () => {
   const navItems: NavItems = text.nav;
 
+  const statues = [
+    {
+      title: "Reglamin",
+      fileName: "Zgoda na wizerunek.pdf"
+    },
+    {
+      title: "Reglamin 2",
+      fileName: "Zgoda na wizerunek.pdf"
+    },
+    {
+      title: "Reglamin 2",
+      fileName: "Zgoda na wizerunek.pdf"
+    },
+    {
+      title: "Reglamin 2",
+      fileName: "Zgoda na wizerunek.pdf"
+    },
+    {
+      title: "Reglamin 2",
+      fileName: "Zgoda na wizerunek.pdf"
+    },
+    {
+      title: "Reglamin 2",
+      fileName: "Zgoda na wizerunek.pdf"
+    }
+  ]
+
   return (
     <div className="footer">
       <NavBar navItems={navItems} />
       <div className="divider" />
       <SocialMedia mobileHeight />
+      <div className="divider divider--small" />
+      <Statues statuesData={statues} />
     </div>
   )
 }
