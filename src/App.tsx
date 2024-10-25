@@ -38,27 +38,19 @@ const Footer = () => {
   const statues = [
     {
       title: "Reglamin",
-      fileName: "Zgoda na wizerunek.pdf"
+      fileName: "Regulamin HackArena 2.0.pdf"
     },
     {
-      title: "Reglamin 2",
-      fileName: "Zgoda na wizerunek.pdf"
+      title: "Zał 1. Zgoa na wizerunek",
+      fileName: "01. Zgoda na wizerunek.pdf"
     },
     {
-      title: "Reglamin 2",
-      fileName: "Zgoda na wizerunek.pdf"
+      title: "Zał 2. Klauzula informacyjna",
+      fileName: "02. Klauzula informacyjna.pdf"
     },
     {
-      title: "Reglamin 2",
-      fileName: "Zgoda na wizerunek.pdf"
-    },
-    {
-      title: "Reglamin 2",
-      fileName: "Zgoda na wizerunek.pdf"
-    },
-    {
-      title: "Reglamin 2",
-      fileName: "Zgoda na wizerunek.pdf"
+      title: "Zał. 3. Zasady turnieju",
+      fileName: "03. Zasady turnieju.pdf"
     }
   ]
 
