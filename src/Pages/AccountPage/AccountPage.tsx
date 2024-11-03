@@ -26,6 +26,7 @@ import VerifiedIcon from "../../Assets/verified.svg";
 import UnverifiedIcon from "../../Assets/notVerified.svg";
 import EditIcon from "../../Assets/edit.svg";
 import CheckIcon from "../../Assets/check.svg";
+import LinkButton from "../../Library/Components/LinkButton/LinkButton";
 
 function AccountPage() {
   const navigate = useNavigate();
@@ -270,7 +271,33 @@ function AccountPage() {
             </span>
           </div>
         )}
+        <div style={{ width: "100%" }}>
+          <h6>Jeszcze raz bardzo dziękujemy za udział w HackArena 2.0</h6>
+          <p style={{ fontSize: "0.8rem" }}>
+            <br />
+            Poniżej znajdziesz instrukcję do odtwarzania gier przesymulowanych w ramach turnieju:
+            <ol>
+              <li>wejdź na&nbsp;
+                <a
+                  href="https://github.com/INIT-SGGW/HackArena2.0-MonoTanks/releases"
+                  target="_blank"
+                  style={{ color: "rgb(var(--primary-color))", textDecoration: "underline" }}
+                >repo MonoTanks</a>
+                &nbsp;i pobierz najnowszą wersję gry</li>
+              <li>wejdź na&nbsp;
+                <a
+                  href="https://drive.google.com/drive/folders/1It93acBfyUOyk5v3aafibODxllHLsOjt?usp=sharing"
+                  target="_blank"
+                  style={{ color: "rgb(var(--primary-color))", textDecoration: "underline" }}
 
+                >Google Drive'a</a>
+                &nbsp;z zapisanymi rozgrywakami i pobierz interesujące Cię mecze</li>
+              <li>pobrane mecze zapisz w folderze "Replays", znajdującym się w plikach gry</li>
+              <li>uruchom clienta GUI MonoTanks, przejdź do zakładki "Watch Replay" i wybierz mecz do odtworzenia</li>
+              <li>wykorzystaj spację do startowania i zatrzymywania powtórki oraz strzałek lewo, prawo do cofania i przewijania powtórki</li>
+            </ol>
+          </p>
+        </div>
         <ul className="account__table">
           {teamData?.teamMembers.map((member, index) => (
             <li key={index}>
