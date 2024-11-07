@@ -275,7 +275,7 @@ function AccountPage() {
           <h6>Jeszcze raz bardzo dziękujemy za udział w HackArena 2.0</h6>
           <p style={{ fontSize: "0.8rem" }}>
             <br />
-            Poniżej znajdziesz instrukcję do odtwarzania gier przesymulowanych w ramach turnieju:
+            Poniżej znajdziesz instrukcję do odtwarzania gier przesymulowanych w ramach turnieju finałowego:
             <ol>
               <li>wejdź na&nbsp;
                 <a
