@@ -24,6 +24,11 @@
   padding-bottom: 5rem;
 }
 
+.event--video {
+  width: 100%;
+  margin-top: 1rem;
+}
+
 .event--welcome span {
   color: var(--accent-color);
 }
@@ -66,6 +71,8 @@
   width: 100%;
   background-color: rgb(var(--primary-color));
   padding: 2rem 0;
+  transition: all 0.15 ease-in-out;
+  text-decoration: none;
 }
 
 .event--clock h4 {

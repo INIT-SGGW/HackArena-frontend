@@ -19,6 +19,7 @@ import {
     UpcomingEventData,
 } from "./types";
 import { AllEventsData } from "./EventData";
+import { Event } from "../../Library/Components/Sponsors/types";
 
 
 
@@ -66,20 +67,46 @@ function EventPage(): JSX.Element {
                             <span>{eventData.banner.date}</span>
                             <h6>{eventData.banner.description}</h6>
                         </div>
-                        <div className="event--clock">
+                        <a className="event--clock" href={eventData.highlightInfo.url} target="_blank">
                             <div className="pagewidth">
-                                <h4>{eventData.highlightInfo}</h4>
+                                <h4>{eventData.highlightInfo.text}</h4>
                             </div>
-                        </div>
+                        </a>
                         <TitleAndDesc text={eventData.task} />
+                        {eventData.format && <TitleAndDesc text={eventData.format} />}
                         <div className="event--section">
                             <h2 className="header__white">{eventData.results.title}</h2>
-                            <span>{eventData.results.description}</span>
+                            <span style={{ marginTop: "1rem" }}>{eventData.results.description}</span>
                             <ol type="I">
-                                <li>{eventData.results.teams.firstPlace}</li>
-                                <li>{eventData.results.teams.secondPlace}</li>
+                                {
+                                    eventData.results.teams.map((team, index) => (
+                                        <li key={index}>{team}</li>
+                                    ))
+                                }
                             </ol>
                         </div>
+                        {
+                            eventData.sponsors && (
+                                <Sponsors event={eventName as Event} />
+                            )
+                        }
+                        {
+                            eventData.highlights &&
+                            <div className="event--section">
+                                <h2 className="header__white">{eventData.highlights.title}</h2>
+                                <span style={{ marginTop: "1rem" }}>{eventData.highlights.description}</span>
+                                <video
+                                    autoPlay={true}
+                                    loop
+                                    muted
+                                    title="Highlights"
+                                    className="event--video"
+                                >
+                                    <source src={eventData.highlights.video} type="video/mp4" />
+                                </video>
+
+                            </div>
+                        }
                         <div className="event--section event--section__photos">
                             <h2 className="header__white">{pageText.photos}</h2>
                             <PhotoGallery photos={eventData.photos.list} />
@@ -165,7 +192,7 @@ function EventPage(): JSX.Element {
                         </div>
                         <Agenda />
                         <div className="event--section">
-                            <Sponsors />
+                            <Sponsors isPastEvent={false} event={eventName as Event} />
                         </div>
 
                         <div className="event--section pagewidth">

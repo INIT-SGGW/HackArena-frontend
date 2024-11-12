@@ -9,7 +9,7 @@ export interface PageText extends PageMetaText {
 
 export interface EventBannerData {
     title: string
-    date: string
+    date: Date
     banner: string
     url: string
 }

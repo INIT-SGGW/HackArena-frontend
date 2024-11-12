@@ -30,17 +30,27 @@ function EventListPage(): JSX.Element {
                 {
                     eventsData !== null && eventsData.count > 0 &&
                     <>
-                        <h3 className='header__yellow'>{pageText.upcoming}</h3>
                         {
-                            eventsData.upcoming.map((event: EventBannerData, index: number) => (
-                                <EventListBanner key={index} image={event.banner} title={event.title} url={event.url} isPresent={true} />
-                            ))
+                            eventsData.upcoming.length > 0 &&
+                            <>
+                                <h3 className='header__yellow'>{pageText.upcoming}</h3>
+                                {
+                                    eventsData.upcoming.sort((a, b) => a.date.getTime() - b.date.getTime()).map((event: EventBannerData, index: number) => (
+                                        <EventListBanner key={index} image={event.banner} title={event.title} url={event.url} isPresent={true} />
+                                    ))
+                                }
+                            </>
                         }
-                        <h3 className='header__white'>{pageText.finished}</h3>
                         {
-                            eventsData.finished.map((event: EventBannerData, index: number) => (
-                                <EventListBanner key={index} image={event.banner} title={event.title} url={event.url} />
-                            ))
+                            eventsData.finished.length > 0 &&
+                            <>
+                                <h3 className='header__white'>{pageText.finished}</h3>
+                                {
+                                    eventsData.finished.sort((a, b) => b.date.getTime() - a.date.getTime()).map((event: EventBannerData, index: number) => (
+                                        <EventListBanner key={index} image={event.banner} title={event.title} url={event.url} />
+                                    ))
+                                }
+                            </>
                         }
                     </>
                 }

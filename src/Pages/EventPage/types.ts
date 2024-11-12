@@ -25,16 +25,28 @@ export interface FinishedEventData {
         description: String
         firstPlace: String
         secondPlace: String
-        teams: {
-            firstPlace: String
-            secondPlace: String
-        }
+        thirdPlace?: String
+        fourthPlace?: String
+        teams: string[]
     },
-    highlightInfo: string,
+    highlightInfo: {
+        text: string
+        url?: string
+    },
     photos: {
         title: String
         list: string[]
-    }
+    },
+    format?: {
+        title: string
+        description: string
+    },
+    highlights?: {
+        title: string
+        description: string,
+        video: string
+    },
+    sponsors?: boolean
 }
 
 export const isFinishedEventData = (eventData: FinishedEventData | UpcomingEventData | null): eventData is FinishedEventData => {

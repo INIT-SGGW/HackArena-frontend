@@ -60,7 +60,7 @@ const Footer = () => {
       <div className="divider" />
       <SocialMedia mobileHeight />
       <div className="divider divider--small" />
-      <Statues statuesData={statues} />
+      <Statues />
     </div>
   )
 }

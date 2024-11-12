@@ -2,7 +2,7 @@ import "./HomePage.css";
 import { useNavigate } from "react-router";
 import { PageText } from "./types";
 import text from "../../Library/Assets/Text/main.json";
-import WelcomImage from "../../Assets/hackarena_1_0_yellow_4.jpg"
+import WelcomImage from "../../Assets/hackarena_2_0_yellow.jpg"
 import { LiveEventHighlight, Sponsors, getEventStatus, EventStatus, Page, Button, HoneyComb } from "../../Library";
 
 function HomePage() {
@@ -31,9 +31,6 @@ function HomePage() {
             <h2 className="header__white">{pageText.aboutUs.title}</h2>
             <p dangerouslySetInnerHTML={{ __html: pageText.aboutUs.description }} />
           </div>
-        </div>
-        <div className="pagewidth home--section">
-          <Sponsors />
         </div>
       </div>
     </Page >
