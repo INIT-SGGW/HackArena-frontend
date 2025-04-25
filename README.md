@@ -1,5 +1,8 @@
 # HackArena 2024 Frontend
 
+> [!NOTE]
+> This is a previous version of a HackArena website. You can check out the current version [here](https://github.com/INIT-SGGW/HackArena-website).
+
 This repo contains code for frontend of HackArena website. It is based on a [HackArena Frontend Library](https://github.com/INIT-SGGW/HackArena2024H2-Frontend-Library), which is used to create all frontend apps for HackArena.
 
 ## Backend
